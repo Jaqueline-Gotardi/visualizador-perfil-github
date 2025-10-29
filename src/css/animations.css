@@ -9,7 +9,7 @@ body {
 
 .container header #input-search {
   transition: var(--transition);
-}
+} 
 
 .container header #input-search:focus {
   outline: 2px solid transparent;

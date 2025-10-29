@@ -11,7 +11,7 @@
     font-size: var(--font-xl);
   }
   
-  .repositories ul {
+  .repositories ul { 
     grid-template-columns: repeat(2, 1fr);
   }
 }
