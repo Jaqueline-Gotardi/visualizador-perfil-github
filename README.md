@@ -2,6 +2,8 @@
 
 Uma aplicação web simples e charmosa para visualizar perfis do GitHub e seus repositórios mais recentes. Basta digitar o nome de usuário e a mágica acontece! ✨
 
+![preview](src/imagens/tela-responsive.png)
+
 ## 🎯 Sobre o Projeto
 
 Este projeto é mais do que um simples código; é um marco na minha jornada de aprendizado! Ele foi desenvolvido como parte do curso **DevQuest** da **Dev em Dobro**, uma plataforma incrível que tem me guiado no universo da programação.
