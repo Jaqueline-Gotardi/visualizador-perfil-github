@@ -28,9 +28,9 @@ async function searchAndDisplayProfile() {
         const userEvents = await fetchGithubUserEvents(userName);
 
         //depois, a função para mostrar o perfil na tela é chamada
-        renderProfile(userData, userRepos, userEvents, profileResults);
+        renderProfile(userData, userEvents, userRepos, profileResults);
 
-    } catch (error) {
+    } catch (error) { 
         console.error('Erro ao buscar o perfil do usuário:', error);
         alert('Usuário não encontrado. Por favor, verifique o nome de usuário e tente novamente.');
         profileResults.innerHTML = ""; // Limpamos a área de resultados.

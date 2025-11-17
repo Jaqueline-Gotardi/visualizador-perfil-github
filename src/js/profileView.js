@@ -1,6 +1,72 @@
+// CRIAR O HTML PARA O CARTÃO DE PERFIL DO USUÁRIO
+function createProfileCardHTML(userData) {
+  return `
+    <div class="profile-card">
+      <img src="${userData.avatar_url}" alt="Avatar de ${userData.name}" class="profile-avatar">
+      <div class="profile-info">
+        <h2>${userData.name || "Não possui nome cadastrado"}</h2>
+        <p>${userData.bio || "Não possui bio cadastrada 😢."}</p>
+        <p>${userData.login || "Não tem login cadastrado"}</p>
+      </div>
+    </div>
+  `;
+}
+
+
+//CRIAR O HTML PARA CONTAR SEGUIDORES E SEGUINDO
+function createCountersHTML(userData) {
+  return `
+    <div class="profile-counters">
+        <div class="followers">
+            <h4>👥 Seguidores</h4>
+            <span>${userData.followers}</span>
+        </div>
+        <div class="following">
+            <h4>👥 Seguindo</h4>
+            <span>${userData.following}</span>
+        </div>
+    </div>
+  `;
+}
+
+
+//CRIAR O HTML PARA EXIBIR OS EVENTOS DO USUÁRIO
+function createdEventsHTML(userEvents) {
+  const eventosItems = userEvents
+  .filter(event => event.type === 'CreateEvent' || event.type === 'PushEvent')
+  .slice(0, 10)  
+
+const eventosFiltrados =  eventosItems.map(event => { 
+  let commitMessage = "Sem detalhes de commit"
+  
+  if (event.type === 'PushEvent' 
+    && event.payload.commits 
+    && event.payload.commits.length > 0){
+    commitMessage = event.payload.commits[0].message 
+  } 
+
+  const pushContent = `${event.repo.name} - ${commitMessage}`;
+
+  return `
+  <div class="profile-events">
+  <span>Repositório: ${event.type === 'PushEvent'
+    ? pushContent : 'Sem mensagem de commit'}
+    </span>
+  </div>
+  `}).join('') //junta todos os pedaços de HTML em um texto só
+return `
+  <div class="Eventos">
+<h2>Eventos</h2>
+<div class= "events-repositories">
+${eventosFiltrados}
+</div>
+</div>
+ `}
+
+
 //CRIAR O HTML PARA A LISTA DE REPO DO USUÁRIO 
 function createRepositoriesHTML(userRepos) { 
-  // Se o usuário não tiver repositórios ou a lista estiver vazia, mostramos uma mensagem. 
+  // Se o usuário não tiver repositórios ou a lista estiver vazia, mostramos uma mensagem
   if (!userRepos || userRepos.length === 0) {
     return `<div class="profile-repositories">
               <h2>Repositórios</h2>
@@ -20,7 +86,7 @@ function createRepositoriesHTML(userRepos) {
             </div>
         </div>
     </a>
-  `).join(''); // ".join('')" junta todos os pedaços de HTML em um texto só.
+  `).join(''); 
 
   return `
     <div class="profile-repositories"> 
@@ -32,76 +98,6 @@ function createRepositoriesHTML(userRepos) {
   `;
 }
 
-// CRIAR O HTML PARA O CARTÃO DE PERFIL DO USUÁRIO
-function createProfileCardHTML(userData) {
-  return `
-    <div class="profile-card">
-      <img src="${userData.avatar_url}" alt="Avatar de ${userData.name}" class="profile-avatar">
-      <div class="profile-info">
-        <h2>${userData.name || "Não possui nome cadastrado"}</h2>
-        <p>${userData.bio || "Não possui bio cadastrada 😢."}</p>
-        <p>${userData.login || "Não tem login cadastrado"}</p>
-      </div>
-    </div>
-  `;
-}
-
-//CRIAR O HTML PARA CONTAR SEGUIDORES E SEGUINDO
-function createCountersHTML(userData) {
-  return `
-    <div class="profile-counters">
-        <div class="followers">
-            <h4>👥 Seguidores</h4>
-            <span>${userData.followers}</span>
-        </div>
-        <div class="following">
-            <h4>👥 Seguindo</h4>
-            <span>${userData.following}</span>
-        </div>
-    </div>
-  `;
-}
-
-function createdEventsHTML(userEvents) {
-  const eventosItems = userEvents
-  .filter(event => event.type === 'CreateEvent' || event.type === 'PushEvent')
-  .slice(0, 10)  
-
-const eventosFiltrados =  eventosItems.map(event => { 
-
-  let commitMessage = "Sem detalhes de commit"
-  
-  if (event.type === 'PushEvent' 
-    && event.payload.commits 
-    && event.payload.commits.length > 0){
-    commitMessage = event.payload.commits[0].message 
-  } 
-
-
- /*  const commitMessage = event.payload.commits && event.payload.commits.length > 0 */
-  //? event.payload.commits[0].message
-  //: "Sem detalhes de commit"
-
-  const pushContent = `${event.repo.name} - ${commitMessage}`;
-
-  return `
-  <div class="profile-events">
-  <span>Repositório: ${event.type === 'PushEvent'
-    ? pushContent : 'Sem mensagem de commit'}
-    </span>
-  </div>
-  `
-  //.join('');
-}
-).join('')
-return `
-  <div class="Eventos">
-<h2>Eventos</h2>
-<div class= "events-repositories">
-${eventosFiltrados}
-</div>
-</div>
- `}
 
  //CRIAR UM PERFIL COMPLETO 
 
@@ -109,15 +105,15 @@ ${eventosFiltrados}
 // userRepos -> A lista de repositórios
 // userEvents -> Lista de commits do usuário
  
-export function renderProfile(userData, userRepos, userEvents, container) {
+export function renderProfile(userData,  userEvents, userRepos, container) {
   // Juntamos todas as partes do HTML que criamos com as funções acima.
   const profileHTML = `
     ${createProfileCardHTML(userData)}
     ${createCountersHTML(userData)}
-    ${createRepositoriesHTML(userRepos)}
     ${createdEventsHTML(userEvents)}
+    ${createRepositoriesHTML(userRepos)}
+    
   `;
-
   //PARA EXIBIR NA PÁGINA
   container.innerHTML = profileHTML;
 }
