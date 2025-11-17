@@ -32,6 +32,11 @@ O principal objetivo aqui foi consolidar meus conhecimentos em **JavaScript ass�
 2.  Abrir o arquivo `index.html` no seu navegador preferido.
 3.  E pronto! Já pode começar a buscar pelos perfis.
 
+## ⭐ Gostou do Projeto?
+
+Se este projeto foi útil ou inspirador para você, ou se você simplesmente gostou do visual, considere deixar uma **estrela** ⭐️ no repositório! Isso ajuda muito a divulgar o trabalho.
+:)
+
 ---
 
 Feito com muito carinho e dedicação por **Jaqueline Gotardi** 💙
