@@ -2,13 +2,13 @@
 @media (max-width: 1280px) {
   .container { 
     width: 95%; 
-  }
+  } 
 }
 
 /* Tablet landscape */
 @media (max-width: 1024px) {
   .container header h2 {
-    font-size: var(--font-xl);
+    font-size:  1.5rem;
   }
   
   .repositories ul { 
@@ -19,7 +19,7 @@
 /* Tablet portrait */
 @media (max-width: 768px) {
   .container { 
-    padding: var(--spacing-lg); 
+    padding: 1.25rem;
   }
   
   .container header #input-search,
@@ -36,22 +36,22 @@
   }
   
   .container .profile-data .counters { 
-    gap: var(--spacing-xl); 
+    gap: 2rem;
   }
   
   .container header h2 {
-    font-size: var(--font-lg);
+    font-size: 1.25rem;
   }
 }
 
 /* Mobile grande */
 @media (max-width: 640px) {
   .devicon-github-original {
-    font-size: var(--font-2xl);
+    font-size: 1.875rem;
   }
   
   .container .profile-data .counters span {
-    font-size: var(--font-xl);
+    font-size: 2rem;
   }
   
   .container .profile-data .counters h4 {
@@ -62,11 +62,11 @@
 /* Mobile médio */
 @media (max-width: 425px) {
   main { 
-    padding: var(--spacing-xl) var(--spacing-xs); 
+    padding: 2rem 0.5rem;
   }
   
   .container { 
-    padding: var(--spacing-md); 
+    padding: 1rem;
   }
   
   .container .profile-data .info img {
@@ -75,20 +75,20 @@
   }
   
   .container .profile-data .info h1 {
-    font-size: var(--font-lg);
+    font-size: 1.25rem;
   }
   
   .container .profile-data .info .data {
-    padding: var(--spacing-md) 0;
+    padding: 1rem 0;
     min-width: 100%;
   }
   
   .container .profile-data .counters { 
-    gap: var(--spacing-lg); 
+    gap: 1.5rem;
   }
   
   .repositories ul li a h4 {
-    font-size: var(--font-xs);
+    font-size: 0.5rem;
   }
   
   .repositories ul li a i {
@@ -99,7 +99,7 @@
 /* Mobile pequeno */
 @media (max-width: 375px) {
   .container header h2 {
-    font-size: var(--font-md);
+    font-size: 1rem;
   }
   
   .container .profile-data .info img {
@@ -109,18 +109,18 @@
   
   .container .profile-data .counters {
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1rem;
   }
 }
 
 /* Mobile extra pequeno */
 @media (max-width: 320px) {
   main {
-    padding: var(--spacing-lg) var(--spacing-xs);
+    padding: 1.5rem 0.5rem;
   }
   
   .container {
-    padding: var(--spacing-sm);
+    padding: 0.75rem;
   }
   
   .container .profile-data .info img {
@@ -129,7 +129,7 @@
   }
   
   .container header #btn-search {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-xs);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
   }
 }

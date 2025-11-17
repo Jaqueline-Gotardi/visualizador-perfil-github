@@ -23,7 +23,7 @@ function createRepositoriesHTML(userRepos) {
   `).join(''); // ".join('')" junta todos os pedaços de HTML em um texto só.
 
   return `
-    <div class="profile-repositories">
+    <div class="profile-repositories"> 
         <h2>Repositórios</h2>
         <div class="repositories">
             ${repositoriesItems}
@@ -40,7 +40,7 @@ function createProfileCardHTML(userData) {
       <div class="profile-info">
         <h2>${userData.name || "Não possui nome cadastrado"}</h2>
         <p>${userData.bio || "Não possui bio cadastrada 😢."}</p>
-        <p>${userData.login} || "Não tem login cadastrado"</p>
+        <p>${userData.login || "Não tem login cadastrado"}</p>
       </div>
     </div>
   `;
