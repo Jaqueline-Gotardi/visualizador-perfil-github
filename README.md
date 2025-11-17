@@ -14,14 +14,15 @@ O principal objetivo aqui foi consolidar meus conhecimentos em **JavaScript ass�
 
 - **Busca de Usuário:** Encontre qualquer perfil do GitHub pelo nome de usuário.
 - **Visualização de Perfil:** Veja informações essenciais como avatar, nome, bio, número de seguidores e de pessoas que o usuário segue.
+- **Eventos do usuário:** Visualize os 10 eventos mais recentes do usuário, focando em suas atividades de **Push** (commits) e **Criação de Repositórios**, mostrando o nome do repositório e a mensagem do último commit.
 - **Lista de Repositórios:** Explore os 10 repositórios mais recentes do usuário, com detalhes como estrelas, forks e linguagem principal.
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **HTML5** para a estrutura da página.
-- **CSS3** para a estilização, deixando tudo bonito e responsivo.
-- **JavaScript** para toda a lógica e interatividade.
-- **GitHub API** como fonte de dados dos perfis.
+- **HTML5**: para a estrutura da página.
+- **CSS3**: para a estilização, deixando tudo bonito e responsivo.
+- **JavaScript**: para toda a lógica e interatividade.
+- **GitHub API**: como fonte de dados dos perfis.
 
 ## 📂 Como Executar
 
