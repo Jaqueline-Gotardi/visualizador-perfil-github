@@ -1,7 +1,7 @@
 //IMPORTAR AS FUNÇÕES CRIADAS NO ProfileView.js
 import { fetchGithubUser, fetchGithubUserRepos, fetchGithubUserEvents } from './githubApi.js'; 
 import { renderProfile } from './profileView.js';
-  
+   
 const inputSearch = document.getElementById('input-search'); //campo de texto para digitar o nome
 const btnSearch = document.getElementById('btn-search'); //botão de buscar
 const profileResults = document.querySelector('.profile-results'); //área onde o perfil vai aparecer
@@ -11,9 +11,9 @@ async function searchAndDisplayProfile() {
     //Pegar nome que foi digitado no campo. . .
     const userName = inputSearch.value;
 
-    // Se o campo estiver vazio, mostra um alerta e limpa qualquer resultado anterior.
+    //se o campo estiver vazio, mostra um alerta e limpa qualquer resultado anterior
     if (!userName) {
-        alert('Por favor, digite um nome de usuário do GitHub.');
+        alert('Por favor, digite um nome de usuário válido do GitHub. . .');
         profileResults.innerHTML = "";
         return; 
     }
@@ -33,7 +33,7 @@ async function searchAndDisplayProfile() {
     } catch (error) { 
         console.error('Erro ao buscar o perfil do usuário:', error);
         alert('Usuário não encontrado. Por favor, verifique o nome de usuário e tente novamente.');
-        profileResults.innerHTML = ""; // Limpamos a área de resultados.
+        profileResults.innerHTML = ""; //limpar a área de resultados
     }
 }
 
@@ -44,32 +44,3 @@ inputSearch.addEventListener('keyup', (event) => {
         searchAndDisplayProfile();
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-/* Solicitação 2
-Apresentar as informações dos últimos eventos do usuário
-no GitHub.
-
-Apresentar na tela uma lista com até 10
-últimos eventos do usuário no GitHub. Os eventos que
-serão apresentados são de dois tipos: CreateEvent e
-PushEvent apenas.
-
-Use esse endpoint do GitHub: (https://api.github.com/users/<coloque-o-
-nome-do-usuario-aqui>/events, por exemplo
-https://api.github.com/users/devemdobro/events):
-
-Mostre o nome do repositório e a mensagem de
-commit do Evento. Exemplo:
-Se for uma atividade do tipo CreateEvent você deve
-mostrar apenas a mensagem “Sem mensagem de
-commit”. */

@@ -3,13 +3,12 @@ const BASE_URL = 'https://api.github.com';
 
 //BUSCAR DADOS DO USUÁRIO
 export async function fetchGithubUser(userName) {
-  const response = await fetch(`${BASE_URL}/users/${userName}`);
+  const response = await fetch(`${BASE_URL}/users/${userName}`); 
   
   //se a resposta não for ok. . .
-  if (!response.ok) { 
+  if (!response.ok) {  
     throw new Error('Usuário não encontrado.');
   }
-  //se der tudo certo, transformamos a resposta em formato q seja possível ler
   return await response.json();
 }
 

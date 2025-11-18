@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@600;700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;...&family=Source+Sans+3:ital,wght@0,200..900;...&family=Inconsolata:wght@400;700&display=swap');
-
 body {
   background: linear-gradient(135deg, #1e3a8a 0%, #9d66c7 50%, #4c1d95 100%);
   background-size: 400% 400%;
@@ -67,8 +65,6 @@ main {
   margin: 0.75rem 0 1rem;;
   border-radius: calc(0.5rem - 2px);
   border: 1px solid #4b225c;
-  /* background: hsl(0, 0%, 100%);
-  color: hsl(3, 84%, 5%); */
   font-family: inherit;
   outline: none;
 }
@@ -97,17 +93,12 @@ main {
   padding: 0.625rem 1rem;
   border-radius: calc(0.5rem - 2px);
   cursor: pointer;
-  /* border: 1px solid transparent; */
   border: 2px solid #340057;
-  /* background: hsla(278, 83%, 11%, 0.952); */
-  /* color: hsl(0, 0%, 0%); */
   color: black;
 }
 
 .container header #btn-search:hover {
-  /* background: #667eea; */
   background: hsla(278, 83%, 11%, 0.952); 
-  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
   color: white;
 }
 
@@ -186,7 +177,6 @@ main {
   margin: 2rem auto;
   max-width: 900px;
   background: transparent;
-  /* background: rgb(184, 218, 184); */
 }
 
 .profile-repositories h2 {
@@ -216,7 +206,7 @@ main {
   flex-direction: column;
   align-items: flex-start;
   transition: .2s all;
-  font-family: 'Inconsolata', monospace;
+  font-family:  monospace;
 }
 
 .repository-card:hover {
@@ -250,7 +240,7 @@ main {
   text-align: left;
 }
 
-.Eventos {
+.eventos {
   margin: 4rem auto 2rem;
   max-width: 900px;
   text-align: center;
@@ -275,14 +265,13 @@ main {
 }
 
 .profile-events span {
-  font-family: 'Inconsolata', monospace; 
+  font-family: monospace; 
   font-size: 0.95rem;
   color: #2f064b; 
   display: block; 
-  word-wrap: break-word; 
 }
 
 .profile-events:hover {
   background-color: #f7f5fa; 
-  transform: translateY(-2px); 
+  transform: translateY(-3px); 
 }

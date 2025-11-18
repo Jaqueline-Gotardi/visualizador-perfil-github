@@ -11,7 +11,7 @@ function createProfileCardHTML(userData) {
     </div>
   `;
 }
-
+ 
 
 //CRIAR O HTML PARA CONTAR SEGUIDORES E SEGUINDO
 function createCountersHTML(userData) {
@@ -49,13 +49,14 @@ const eventosFiltrados =  eventosItems.map(event => {
 
   return `
   <div class="profile-events">
-  <span>Repositório: ${event.type === 'PushEvent'
-    ? pushContent : 'Sem mensagem de commit'}
+  <span>Repositório: ${event.type === 'PushEvent' 
+                     ? pushContent 
+                     : 'Sem mensagem de commit'}
     </span>
   </div>
   `}).join('') //junta todos os pedaços de HTML em um texto só
 return `
-  <div class="Eventos">
+  <div class="eventos">
 <h2>Eventos</h2>
 <div class= "events-repositories">
 ${eventosFiltrados}
@@ -66,7 +67,7 @@ ${eventosFiltrados}
 
 //CRIAR O HTML PARA A LISTA DE REPO DO USUÁRIO 
 function createRepositoriesHTML(userRepos) { 
-  // Se o usuário não tiver repositórios ou a lista estiver vazia, mostramos uma mensagem
+  // Se o usuário não tiver repositórios ou a lista estiver vazia. . .
   if (!userRepos || userRepos.length === 0) {
     return `<div class="profile-repositories">
               <h2>Repositórios</h2>
@@ -106,7 +107,7 @@ function createRepositoriesHTML(userRepos) {
 // userEvents -> Lista de commits do usuário
  
 export function renderProfile(userData,  userEvents, userRepos, container) {
-  // Juntamos todas as partes do HTML que criamos com as funções acima.
+  //juntar todas as partes do HTML criadas com as funções acima. . .
   const profileHTML = `
     ${createProfileCardHTML(userData)}
     ${createCountersHTML(userData)}

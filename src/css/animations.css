@@ -1,7 +1,7 @@
 * {
     scrollbar-width: thin;
     scrollbar-color: rgba(160, 55, 163, 0.9) rgba(31, 0, 51, 0.9);
-}
+} 
 
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%}
